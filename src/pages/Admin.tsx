@@ -97,7 +97,7 @@ export default function Admin() {
             <input 
               className="magic-input" 
               type="text" 
-              placeholder="Usuário (ex: kelsu)" 
+              placeholder="Usuário" 
               value={username} 
               onChange={(e) => setUsername(e.target.value)} 
             />
