@@ -47,3 +47,30 @@ export const submitSorting = async (name: string, houseId: string) => {
 
   return { data, error };
 };
+
+export const getAllResponses = async () => {
+  const { data, error } = await supabase
+    .from('responses')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  return { data, error };
+};
+
+export const updateResponse = async (id: string, name: string, houseId: string) => {
+  const { data, error } = await supabase
+    .from('responses')
+    .update({ name, house_id: houseId })
+    .eq('id', id);
+
+  return { data, error };
+};
+
+export const deleteResponse = async (id: string) => {
+  const { data, error } = await supabase
+    .from('responses')
+    .delete()
+    .eq('id', id);
+
+  return { data, error };
+};
