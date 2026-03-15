@@ -66,14 +66,14 @@ function App() {
 
   const enterHall = () => {
     if (audioRef.current) {
-      audioRef.current.play().then(() => setIsMuted(false)).catch(e => console.log("Audio play blocked", e));
+      audioRef.current.play().then(() => setIsMuted(false)).catch(e => console.log("Audio play", e));
     }
     setStep('landing');
   };
 
   const toggleMusic = () => {
     if (audioRef.current) {
-      if (isMuted) audioRef.current.play().catch(e => console.log("Audio play blocked", e));
+      if (isMuted) audioRef.current.play().catch(e => console.log("Audio play", e));
       else audioRef.current.pause();
       setIsMuted(!isMuted);
     }
@@ -95,9 +95,10 @@ function App() {
 
   const finishQuiz = async () => {
     setStep('submitting');
+    const suspenseTimer = new Promise(resolve => setTimeout(resolve, 3500));
     try {
       const scores = calculateScores({ ...answers });
-      const counts = await getHouseCounts();
+      const [counts] = await Promise.all([getHouseCounts(), suspenseTimer]);
       const houseId = findBestHouse(scores, counts as Record<HouseName, number>);
       const { error } = await submitSorting(name, houseId);
       if (error) throw error;
@@ -112,7 +113,6 @@ function App() {
   return (
     <>
       <audio ref={audioRef} src={musicaTema} loop />
-      
       <div className={`hall-background ${step !== 'welcome' ? 'visible' : ''}`} />
       
       {step !== 'welcome' && (
@@ -130,7 +130,7 @@ function App() {
       
       <motion.div 
         animate={{ height }}
-        transition={{ type: "spring", stiffness: 100, damping: 20 }}
+        transition={{ type: "spring", stiffness: 100, damping: 22 }}
         className="magic-container"
         style={{ overflow: 'hidden' }}
       >
@@ -138,16 +138,16 @@ function App() {
           <AnimatePresence mode="wait">
             <motion.div
               key={step + (step === 'quiz' ? currentQuestionIndex : '')}
-              initial={{ opacity: 0, scale: 0.98 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.02 }}
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 10 }}
               transition={{ duration: 0.3 }}
-              style={{ padding: '30px 25px', width: '100%', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+              style={{ padding: '35px 25px', width: '100%', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
             >
               {step === 'welcome' && (
                 <div className="content-step">
-                  <h1 className="magic-title">New Games 2026</h1>
-                  <p style={{ marginBottom: '1.5rem', fontSize: '1.1rem', fontStyle: 'italic', opacity: 0.8 }}>
+                  <h1 className="magic-title">Gincana 2026</h1>
+                  <p style={{ marginBottom: '2rem', fontSize: '1.1rem', fontStyle: 'italic', opacity: 0.85 }}>
                     O Salão está em silêncio...
                   </p>
                   <button className="magic-button" onClick={enterHall}>Entrar no Salão</button>
@@ -156,18 +156,21 @@ function App() {
 
               {step === 'landing' && (
                 <div className="content-step" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <h1 className="magic-title" style={{ fontSize: '1.5rem' }}>Identificação</h1>
+                  <h1 className="magic-title">Inscrição Gincana</h1>
                   <motion.div
                     animate={{ y: [0, -8, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                    style={{ marginBottom: '1.2rem' }}
+                    style={{ marginBottom: '1.5rem' }}
                   >
-                    <img src={chapeuImg} alt="Chapéu Seletor" style={{ width: '110px', height: 'auto', filter: 'drop-shadow(0 0 10px rgba(197, 160, 89, 0.4))' }} />
+                    <img src={chapeuImg} alt="Chapéu" style={{ width: 'clamp(110px, 12vw, 140px)', height: 'auto', filter: 'drop-shadow(0 0 10px rgba(197, 160, 89, 0.4))' }} />
                   </motion.div>
+                  <p style={{ marginBottom: '1.5rem', fontSize: '1.05rem', opacity: 0.9 }}>
+                    Insira seu nome completo para <br /> entrar em uma das equipes.
+                  </p>
                   <input
                     type="text"
                     className="magic-input"
-                    placeholder="Seu nome completo..."
+                    placeholder="..."
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     autoFocus
@@ -178,8 +181,8 @@ function App() {
 
               {step === 'quiz' && (
                 <div className="content-step" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <p style={{ color: 'var(--magic-gold)', fontSize: '0.8rem', letterSpacing: '2px', marginBottom: '1rem' }}>
-                    QUESTÃO {currentQuestionIndex + 1} / {QUESTIONS.length}
+                  <p style={{ color: 'var(--magic-gold)', fontSize: '0.8rem', fontWeight: 600, letterSpacing: '2px', marginBottom: '1rem', textTransform: 'uppercase' }}>
+                    Questão {currentQuestionIndex + 1} / {QUESTIONS.length}
                   </p>
                   <h2 className="question-text">{QUESTIONS[currentQuestionIndex].text}</h2>
                   <div className="options-container">
@@ -197,20 +200,21 @@ function App() {
                   <motion.div
                     animate={{ scale: [1, 1.05, 1], rotate: [0, -5, 5, 0] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    style={{ marginBottom: '1rem' }}
+                    style={{ marginBottom: '1.5rem' }}
                   >
-                    <img src={chapeuImg} alt="Chapéu Seletor" style={{ width: '90px', height: 'auto' }} />
+                    <img src={chapeuImg} alt="Chapéu" style={{ width: '100px', height: 'auto' }} />
                   </motion.div>
-                  <h2 className="magic-title" style={{ fontSize: '1.2rem' }}>Analisando seu perfil...</h2>
+                  <h2 className="magic-title" style={{ fontSize: '1.4rem' }}>Analisando perfil...</h2>
+                  <p style={{ fontStyle: 'italic', opacity: 0.7 }}>Escolhendo sua equipe da gincana...</p>
                 </div>
               )}
 
               {step === 'success' && (
                 <div className="content-step">
-                  <h1 className="magic-title" style={{ fontSize: '1.5rem' }}>Concluído!</h1>
-                  <p className="success-message">Perfil registrado com sucesso.</p>
-                  <p style={{ marginTop: '1.5rem', fontSize: '0.95rem', opacity: 0.9 }}>
-                    A revelação será na gincana presencial!
+                  <h1 className="magic-title">Inscrição Concluída!</h1>
+                  <p className="success-message">Seu perfil foi registrado.</p>
+                  <p style={{ marginTop: '2rem', fontSize: '1rem', opacity: 0.9 }}>
+                    A revelação das equipes será <br /> na gincana presencial!
                   </p>
                 </div>
               )}
