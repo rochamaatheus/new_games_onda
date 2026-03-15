@@ -78,7 +78,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 3,
-    text: "Qual característica os irmãos do seu Grupo de Discipulado (New Games) mais admiram em você?",
+    text: "Qual característica os irmãos do seu Grupo de Discipulado (GD) mais admiram em você?",
     options: [
       { text: "Sua criatividade e talento artístico.", points: { PERIPOU: 1 } },
       { text: "Sua simpatia, carisma e amor acolhedor.", points: { KALIDA: 1 } },
@@ -138,7 +138,7 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 8,
-    text: "Você tem um sábado livre com o seu New Games. O que prefere organizar para a galera?",
+    text: "Você tem um sábado livre com o seu GD. O que prefere organizar para a galera?",
     options: [
       { text: "Uma noite de talentos, ensaio de banda, sarau ou ir a um show cristão.", points: { PERIPOU: 1 } },
       { text: "Uma noite da pizza na sua casa, com muitas risadas e jogos de tabuleiro.", points: { KALIDA: 1 } },
