@@ -173,7 +173,6 @@ function App() {
                     placeholder="..."
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    autoFocus
                   />
                   <button className="magic-button" onClick={startQuiz}>Iniciar</button>
                 </div>

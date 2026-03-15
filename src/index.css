@@ -13,18 +13,30 @@
   --container-width: clamp(340px, 85vw, 580px); /* Mais largo no mobile */
 }
 
-body {
+html, body, #root {
+  height: 100dvh;
   margin: 0;
-  padding: 15px;
+  padding: 0;
+  width: 100%;
+}
+
+body {
   font-family: 'Crimson Pro', serif;
   background-color: #000;
   color: var(--parchment);
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: var(--font-base);
-  overflow-x: hidden;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
   box-sizing: border-box;
 }
 
