@@ -8,20 +8,26 @@ import chapeuImg from '../assets/chapeu_seletor.png';
 import musicaTema from '../assets/musica_tema.mp3'; 
 import '../index.css';
 
-const MagicParticles = ({ visible }: { visible: boolean }) => {
-  const [particles, setParticles] = useState<any[]>([]);
+interface Particle {
+  id: number;
+  size: number;
+  x: number;
+  y: number;
+  duration: number;
+  delay: number;
+}
 
-  useEffect(() => {
-    const p = Array.from({ length: 12 }).map((_, i) => ({
+const MagicParticles = ({ visible }: { visible: boolean }) => {
+  const [particles] = useState<Particle[]>(() => 
+    Array.from({ length: 12 }).map((_, i) => ({
       id: i,
       size: Math.random() * 2 + 1,
       x: Math.random() * 100,
       y: Math.random() * 100,
       duration: Math.random() * 15 + 15,
       delay: Math.random() * 5,
-    }));
-    setParticles(p);
-  }, []);
+    }))
+  );
 
   return (
     <div className={`particles-container ${visible ? 'visible' : ''}`}>
@@ -44,7 +50,7 @@ export default function Home() {
   const [step, setStep] = useState<Step>('welcome');
   const [name, setName] = useState('');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [answers, setAnswers] = useState<Record<number, any>>({});
+  const [answers, setAnswers] = useState<Record<number, Partial<Record<HouseName, number>>>>({});
   const [isMuted, setIsMuted] = useState(true);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -53,7 +59,7 @@ export default function Home() {
   useEffect(() => {
     if (containerRef.current) {
       const resizeObserver = new ResizeObserver((entries) => {
-        for (let entry of entries) {
+        for (const entry of entries) {
           requestAnimationFrame(() => {
             setHeight(entry.contentRect.height);
           });
@@ -87,7 +93,7 @@ export default function Home() {
     setStep('quiz');
   };
 
-  const handleAnswer = (points: any) => {
+  const handleAnswer = (points: Partial<Record<HouseName, number>>) => {
     setAnswers({ ...answers, [QUESTIONS[currentQuestionIndex].id]: points });
     if (currentQuestionIndex < QUESTIONS.length - 1) setCurrentQuestionIndex(currentQuestionIndex + 1);
     else finishQuiz();

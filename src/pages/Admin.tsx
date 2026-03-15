@@ -17,6 +17,18 @@ export default function Admin() {
   const [editName, setEditName] = useState('');
   const [editHouse, setEditHouse] = useState<HouseName>('AGOLGO');
 
+  const fetchData = async () => {
+    setLoading(true);
+    const [respData, countData] = await Promise.all([
+      getAllResponses(),
+      getHouseCounts()
+    ]);
+    
+    if (respData.data) setResponses(respData.data);
+    if (countData) setCounts(countData);
+    setLoading(false);
+  };
+
   useEffect(() => {
     // Check if already logged in via Supabase session
     const checkSession = async () => {
@@ -46,18 +58,6 @@ export default function Admin() {
       setIsAuthenticated(true);
       fetchData();
     }
-    setLoading(false);
-  };
-
-  const fetchData = async () => {
-    setLoading(true);
-    const [respData, countData] = await Promise.all([
-      getAllResponses(),
-      getHouseCounts()
-    ]);
-    
-    if (respData.data) setResponses(respData.data);
-    if (countData) setCounts(countData);
     setLoading(false);
   };
 
