@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Pro:wght@400;600&display=swap');
+
+:root {
+  --magic-gold: #c5a059;
+  --parchment: #f4e4bc;
+  --dark-magic: #000000;
+  --option-bg: rgba(255, 255, 255, 0.03);
+}
+
+body {
+  margin: 0;
+  padding: 10px; /* Reduzido para ganhar espaço */
+  font-family: 'Crimson Pro', serif;
+  background-color: #000;
+  color: var(--parchment);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px; /* Fonte base reduzida */
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.hall-background {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('./assets/salao_de_velas.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hall-background.visible { opacity: 1; }
+
+.magic-container {
+  position: relative;
+  z-index: 10;
+  background: rgba(10, 10, 10, 0.85);
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  backdrop-filter: blur(12px);
+  max-width: 420px; /* Largura máxima reduzida para ser mais compacto */
+  width: 100%;
+  margin: 20px 0; /* Margem reduzida */
+  box-sizing: border-box;
+}
+
+.magic-title {
+  font-family: 'Cinzel', serif;
+  color: var(--magic-gold);
+  font-size: 1.6rem; /* Título reduzido */
+  margin-bottom: 1.2rem; /* Margem reduzida */
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
+}
+
+.magic-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--magic-gold);
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 6px;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+  outline: none;
+  margin-bottom: 1.5rem;
+  font-family: 'Crimson Pro', serif;
+}
+
+.magic-button {
+  background: var(--magic-gold);
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: 'Cinzel', serif;
+  transition: all 0.3s ease;
+}
+
+.question-text {
+  font-size: 1.3rem; /* Pergunta reduzida */
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espaço entre botões reduzido */
+  width: 100%;
+}
+
+.option-button {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  color: var(--parchment);
+  padding: 12px 15px; /* Padding menor */
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.success-message { font-size: 1.2rem; color: var(--magic-gold); margin-top: 1rem; font-weight: 600; }
+
+@media (max-width: 480px) {
+  body { padding: 15px; }
+  .magic-title { font-size: 1.4rem; }
+  .magic-container { margin: 10px 0; }
+  .question-text { font-size: 1.15rem; }
+  .option-button { font-size: 0.95rem; padding: 10px 12px; }
+}
