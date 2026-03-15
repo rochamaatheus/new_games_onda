@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { getAllResponses, deleteResponse, updateResponse, getHouseCounts, supabase } from '../lib/supabase';
-import { HouseName, Response } from '../types';
+import type { HouseName, Response } from '../types';
 import './Admin.css';
 
 const HOUSES: HouseName[] = ['AGOLGO', 'FILINI', 'KALIDA', 'PERIPOU', 'KONIPAK', 'OCTANI'];
