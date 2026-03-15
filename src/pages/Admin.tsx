@@ -25,6 +25,11 @@ export default function Admin() {
         getHouseCounts()
       ]);
       
+      if (respData.error) {
+        console.error("Erro Supabase:", respData.error);
+        alert("Erro ao carregar pergaminho: " + respData.error.message);
+      }
+      
       if (respData.data) setResponses(respData.data);
       if (countData) setCounts(countData);
     } catch (error) {
