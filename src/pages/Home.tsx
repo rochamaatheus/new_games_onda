@@ -152,7 +152,7 @@ export default function Home() {
             >
               {step === 'welcome' && (
                 <div className="content-step">
-                  <h1 className="magic-title">Gincana 2026</h1>
+                  <h1 className="magic-title">New Games 2026</h1>
                   <p style={{ marginBottom: '2rem', fontSize: '1.1rem', fontStyle: 'italic', opacity: 0.85 }}>
                     O Salão está em silêncio...
                   </p>
@@ -162,7 +162,7 @@ export default function Home() {
 
               {step === 'landing' && (
                 <div className="content-step" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <h1 className="magic-title">Inscrição Gincana</h1>
+                  <h1 className="magic-title">NEW GAMES 2026</h1>
                   <motion.div
                     animate={{ y: [0, -8, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
