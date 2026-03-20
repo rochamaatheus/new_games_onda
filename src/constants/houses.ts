@@ -71,8 +71,8 @@ export const QUESTIONS: Question[] = [
       { text: "Liderando as músicas na fogueira com um violão ou organizando um role.", points: { PERIPOU: 1 } },
       { text: "Na roda de conversa e nos dormitórios, garantindo que ninguém se sinta isolado.", points: { KALIDA: 1 } },
       { text: "Debatendo sobre assuntos bíblicos/teológicos ou tirando dúvidas difíceis.", points: { FILINI: 1 } },
-      { text: "Na cozinha, na cantina ou na secretaria ajudando a organizar a logística do evento.", points: { OCTANI: 1 } },
-      { text: "Planejando uma ação de impacto ou doação na comunidade vizinha ao acampamento.", points: { AGOLGO: 1 } },
+      { text: "Sempre tentando ajudar e servir em alguma parte do evento", points: { OCTANI: 1 } },
+      { text: "Planejando como podemos notar em pratica tudo que vivemos no nosso dia a dia", points: { AGOLGO: 1 } },
       { text: "Em uma tenda ou sala de oração, aconselhando e ouvindo os desabafos da galera.", points: { KONIPAK: 1 } },
     ]
   },
