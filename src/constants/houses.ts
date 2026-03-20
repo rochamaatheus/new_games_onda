@@ -68,9 +68,9 @@ export const QUESTIONS: Question[] = [
     id: 2,
     text: "Durante um retiro ou acampamento de pré-adolescentes e jovens, onde é mais fácil te encontrar?",
     options: [
-      { text: "Liderando as músicas na fogueira com um violão ou organizando um teatro.", points: { PERIPOU: 1 } },
+      { text: "Liderando as músicas na fogueira com um violão ou organizando um role.", points: { PERIPOU: 1 } },
       { text: "Na roda de conversa e nos dormitórios, garantindo que ninguém se sinta isolado.", points: { KALIDA: 1 } },
-      { text: "Puxando um debate profundo sobre um tema teológico ou tirando dúvidas difíceis.", points: { FILINI: 1 } },
+      { text: "Debatendo sobre assuntos bíblicos/teológicos ou tirando dúvidas difíceis.", points: { FILINI: 1 } },
       { text: "Na cozinha, na cantina ou na secretaria ajudando a organizar a logística do evento.", points: { OCTANI: 1 } },
       { text: "Planejando uma ação de impacto ou doação na comunidade vizinha ao acampamento.", points: { AGOLGO: 1 } },
       { text: "Em uma tenda ou sala de oração, aconselhando e ouvindo os desabafos da galera.", points: { KONIPAK: 1 } },
@@ -92,23 +92,23 @@ export const QUESTIONS: Question[] = [
     id: 4,
     text: "Seu time está perdido em meio a um desafio do NewGames, você:",
     options: [
-      { text: "Tento tomar a liderança para resolver a situation, depois vejo se deu certo.", points: { PERIPOU: 1 } },
-      { text: "Chamo a galera e organizo o time pra tentar resolver juntos da melhor forma.", points: { KALIDA: 1 } },
-      { text: "Observo tudo primeiro e só falo quando tenho certeza do que fazer.", points: { KONIPAK: 1 } },
-      { text: "Espero um pouco, observo o que os outros fazem e tento aproveitar uma oportunidade pra mudar o rumo.", points: { OCTANI: 1 } },
-      { text: "Se preocupa em todo mundo estar bem um com o outro, porque o mais importante é ninguém se desanimar.", points: { FILINI: 1 } },
+      { text: "Sempre tentando ajudar e servir em alguma parte do evento", points: { PERIPOU: 1 } },
+      { text: "Sempre tentando ajudar e servir em alguma parte do evento", points: { KALIDA: 1 } },
+      { text: "Sempre tentando ajudar e servir em alguma parte do evento", points: { KONIPAK: 1 } },
+      { text: "Sempre tentando ajudar e servir em alguma parte do evento", points: { OCTANI: 1 } },
+      { text: "Sempre tentando ajudar e servir em alguma parte do evento", points: { FILINI: 1 } },
     ]
   },
   {
     id: 5,
     text: "Qual versículo ou princípio bíblico mais ressoa com o seu chamado?",
     options: [
-      { text: "\"Cantai ao Senhor um cântico novo.\"", points: { PERIPOU: 1 } },
-      { text: "\"Acolhei-vos uns aos outros, como Cristo nos acolheu.\"", points: { KALIDA: 1 } },
-      { text: "\"Conhecereis a verdade, e a verdade vos libertará.\"", points: { FILINI: 1 } },
-      { text: "\"Tudo o que fizerem, façam de todo o coração.\"", points: { OCTANI: 1 } },
-      { text: "\"Ide por todo o mundo, pregai o evangelho a toda criatura.\"", points: { AGOLGO: 1 } },
-      { text: "\"Orai sem cessar.\"", points: { KONIPAK: 1 } },
+      { text: "Planejando como podemos colocar em prática tudo que vivemos no nosso dia a dia", points: { PERIPOU: 1 } },
+      { text: "Planejando como podemos colocar em prática tudo que vivemos no nosso dia a dia", points: { KALIDA: 1 } },
+      { text: "Planejando como podemos colocar em prática tudo que vivemos no nosso dia a dia", points: { FILINI: 1 } },
+      { text: "Planejando como podemos colocar em prática tudo que vivemos no nosso dia a dia", points: { OCTANI: 1 } },
+      { text: "Planejando como podemos colocar em prática tudo que vivemos no nosso dia a dia", points: { AGOLGO: 1 } },
+      { text: "Planejando como podemos colocar em prática tudo que vivemos no nosso dia a dia", points: { KONIPAK: 1 } },
     ]
   },
   {
