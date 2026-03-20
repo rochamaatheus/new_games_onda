@@ -92,23 +92,23 @@ export const QUESTIONS: Question[] = [
     id: 4,
     text: "Seu time está perdido em meio a um desafio do NewGames, você:",
     options: [
-      { text: "Sempre tentando ajudar e servir em alguma parte do evento", points: { PERIPOU: 1 } },
-      { text: "Sempre tentando ajudar e servir em alguma parte do evento", points: { KALIDA: 1 } },
-      { text: "Sempre tentando ajudar e servir em alguma parte do evento", points: { KONIPAK: 1 } },
-      { text: "Sempre tentando ajudar e servir em alguma parte do evento", points: { OCTANI: 1 } },
-      { text: "Sempre tentando ajudar e servir em alguma parte do evento", points: { FILINI: 1 } },
+      { text: "Tento tomar a liderança para resolver a situation, depois vejo se deu certo.", points: { PERIPOU: 1 } },
+      { text: "Chamo a galera e organizo o time pra tentar resolver juntos da melhor forma.", points: { KALIDA: 1 } },
+      { text: "Observo tudo primeiro e só falo quando tenho certeza do que fazer.", points: { KONIPAK: 1 } },
+      { text: "Espero um pouco, observo o que os outros fazem e tento aproveitar uma oportunidade pra mudar o rumo.", points: { OCTANI: 1 } },
+      { text: "Se preocupa em todo mundo estar bem um com o outro, porque o mais importante é ninguém se desanimar.", points: { FILINI: 1 } },
     ]
   },
   {
     id: 5,
     text: "Qual versículo ou princípio bíblico mais ressoa com o seu chamado?",
     options: [
-      { text: "Planejando como podemos colocar em prática tudo que vivemos no nosso dia a dia", points: { PERIPOU: 1 } },
-      { text: "Planejando como podemos colocar em prática tudo que vivemos no nosso dia a dia", points: { KALIDA: 1 } },
-      { text: "Planejando como podemos colocar em prática tudo que vivemos no nosso dia a dia", points: { FILINI: 1 } },
-      { text: "Planejando como podemos colocar em prática tudo que vivemos no nosso dia a dia", points: { OCTANI: 1 } },
-      { text: "Planejando como podemos colocar em prática tudo que vivemos no nosso dia a dia", points: { AGOLGO: 1 } },
-      { text: "Planejando como podemos colocar em prática tudo que vivemos no nosso dia a dia", points: { KONIPAK: 1 } },
+      { text: "\"Cantai ao Senhor um cântico novo.\"", points: { PERIPOU: 1 } },
+      { text: "\"Acolhei-vos uns aos outros, como Cristo nos acolheu.\"", points: { KALIDA: 1 } },
+      { text: "\"Conhecereis a verdade, e a verdade vos libertará.\"", points: { FILINI: 1 } },
+      { text: "\"Tudo o que fizerem, façam de todo o coração.\"", points: { OCTANI: 1 } },
+      { text: "\"Ide por todo o mundo, pregai o evangelho a toda criatura.\"", points: { AGOLGO: 1 } },
+      { text: "\"Orai sem cessar.\"", points: { KONIPAK: 1 } },
     ]
   },
   {
