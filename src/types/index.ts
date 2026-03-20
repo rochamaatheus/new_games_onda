@@ -22,5 +22,6 @@ export interface Response {
   id?: string;
   name: string;
   house_id: HouseName;
+  full_scores: Partial<Record<HouseName, number>>;
   created_at?: string;
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getAllResponses, deleteResponse, updateResponse, getHouseCounts, supabase } from '../lib/supabase';
+import { redistributeHouses } from '../utils/sorting';
 import type { HouseName, Response } from '../types';
 import './Admin.css';
 
@@ -91,6 +92,35 @@ export default function Admin() {
     }
   };
 
+  const handleGlobalSorting = async () => {
+    if (!confirm("O BANQUETE DE SELEÇÃO: Isso irá redistribuir TODOS os participantes para equilibrar as equipes perfeitamente. Deseja continuar?")) return;
+    
+    setLoading(true);
+    try {
+      const { data } = await getAllResponses();
+      if (!data || data.length === 0) {
+        alert("Nenhum bruxo para selecionar!");
+        return;
+      }
+
+      const redistributed = redistributeHouses(data as Response[]);
+
+      const updates = redistributed.map(res => 
+        updateResponse(res.id!, res.name, res.house_id)
+      );
+
+      await Promise.all(updates);
+      
+      alert("Cerimônia concluída! As equipes agora estão perfeitamente equilibradas pelo Chapéu Seletor.");
+      fetchData();
+    } catch (error) {
+      console.error(error);
+      alert("Houve uma interferência mágica (erro ao ordenar).");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   if (!isAuthenticated) {
     return (
       <div className="admin-login-container">
@@ -143,9 +173,14 @@ export default function Admin() {
             <h1 className="magic-title">O Profeta da Gincana</h1>
             <p className="admin-subtitle">Controle Central de Equipes</p>
           </div>
-          <button className="logout-button" onClick={() => supabase.auth.signOut().then(() => window.location.reload())}>
-            Sair do Salão
-          </button>
+          <div className="header-actions" style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
+            <button className="magic-action-button" onClick={handleGlobalSorting} disabled={loading}>
+              {loading ? "Processando..." : "Cerimônia de Seleção ⚡"}
+            </button>
+            <button className="logout-button" onClick={() => supabase.auth.signOut().then(() => window.location.reload())}>
+              Sair do Salão
+            </button>
+          </div>
         </header>
 
         <section className="admin-stats">

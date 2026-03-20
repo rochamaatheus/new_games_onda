@@ -106,7 +106,7 @@ export default function Home() {
       const scores = calculateScores({ ...answers });
       const [counts] = await Promise.all([getHouseCounts(), suspenseTimer]);
       const houseId = findBestHouse(scores, counts as Record<HouseName, number>);
-      const { error } = await submitSorting(name, houseId);
+      const { error } = await submitSorting(name, houseId, scores);
       if (error) throw error;
       setStep('success');
     } catch (err) {

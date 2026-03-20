@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import type { HouseName } from '../types';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
@@ -40,10 +41,10 @@ export const getHouseCounts = async () => {
   return counts;
 };
 
-export const submitSorting = async (name: string, houseId: string) => {
+export const submitSorting = async (name: string, houseId: string, fullScores: Partial<Record<HouseName, number>>) => {
   const { data, error } = await supabase
     .from('responses')
-    .insert([{ name, house_id: houseId }]);
+    .insert([{ name, house_id: houseId, full_scores: fullScores }]);
 
   return { data, error };
 };
