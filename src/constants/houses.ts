@@ -92,23 +92,23 @@ export const QUESTIONS: Question[] = [
     id: 4,
     text: "Seu time está perdido em meio a um desafio do NewGames, você:",
     options: [
-      { text: "Tento tomar a liderança para resolver a situação, depois vejo se deu certo. (PERIPOU)", points: { PERIPOU: 1 } },
-      { text: "Chamo a galera e organizo o time pra tentar resolver juntos da melhor forma. (KALIDA)", points: { KALIDA: 1 } },
-      { text: "Observo tudo primeiro e só falo quando tenho certeza do que fazer. (KONIPAK)", points: { KONIPAK: 1 } },
-      { text: "Espero um pouco, observo o que os outros fazem e tento aproveitar uma oportunidade pra mudar o rumo. (OCTANI)", points: { OCTANI: 1 } },
-      { text: "Se preocupa em todo mundo estar bem um com o outro, porque o mais importante é ninguém se desanimar. (FILINI)", points: { FILINI: 1 } },
+      { text: "Tento tomar a liderança para resolver a situation, depois vejo se deu certo.", points: { PERIPOU: 1 } },
+      { text: "Chamo a galera e organizo o time pra tentar resolver juntos da melhor forma.", points: { KALIDA: 1 } },
+      { text: "Observo tudo primeiro e só falo quando tenho certeza do que fazer.", points: { KONIPAK: 1 } },
+      { text: "Espero um pouco, observo o que os outros fazem e tento aproveitar uma oportunidade pra mudar o rumo.", points: { OCTANI: 1 } },
+      { text: "Se preocupa em todo mundo estar bem um com o outro, porque o mais importante é ninguém se desanimar.", points: { FILINI: 1 } },
     ]
   },
   {
     id: 5,
     text: "Qual versículo ou princípio bíblico mais ressoa com o seu chamado?",
     options: [
-      { text: "\"Cantai ao Senhor um cântico novo.\" (Adoração)", points: { PERIPOU: 1 } },
-      { text: "\"Acolhei-vos uns aos outros, como Cristo nos acolheu.\" (Comunhão)", points: { KALIDA: 1 } },
-      { text: "\"Conhecereis a verdade, e a verdade vos libertará.\" (Ensino)", points: { FILINI: 1 } },
-      { text: "\"Tudo o que fizerem, façam de todo o coração.\" (Serviço)", points: { OCTANI: 1 } },
-      { text: "\"Ide por todo o mundo, pregai o evangelho a toda criatura.\" (Missões)", points: { AGOLGO: 1 } },
-      { text: "\"Orai sem cessar.\" (Intercessão)", points: { KONIPAK: 1 } },
+      { text: "\"Cantai ao Senhor um cântico novo.\"", points: { PERIPOU: 1 } },
+      { text: "\"Acolhei-vos uns aos outros, como Cristo nos acolheu.\"", points: { KALIDA: 1 } },
+      { text: "\"Conhecereis a verdade, e a verdade vos libertará.\"", points: { FILINI: 1 } },
+      { text: "\"Tudo o que fizerem, façam de todo o coração.\"", points: { OCTANI: 1 } },
+      { text: "\"Ide por todo o mundo, pregai o evangelho a toda criatura.\"", points: { AGOLGO: 1 } },
+      { text: "\"Orai sem cessar.\"", points: { KONIPAK: 1 } },
     ]
   },
   {
@@ -127,12 +127,12 @@ export const QUESTIONS: Question[] = [
     id: 7,
     text: "Como você descreveria o seu ritmo natural ao buscar um objetivo?",
     options: [
-      { text: "\"Eu vou com tudo logo de cara; se eu ver uma oportunidade, eu agarro e não solto até conseguir.\" (Peripou - Impulsividade/Independência)", points: { PERIPOU: 1 } },
-      { text: "\"Eu foco em manter o ritmo alto, mas sempre olho para o lado para garantir que ninguém do meu círculo ficou para trás.\" (Kalida - Competitiva/Unida)", points: { KALIDA: 1 } },
-      { text: "\"Eu prefiro não gastar energia à toa; fico no meu canto analisando o terreno até ter 100% de certeza de onde pisar.\" (Konipak - Observadora/Cautelosa)", points: { KONIPAK: 1 } },
-      { text: "\"Eu deixo os outros se cansarem primeiro; observo onde eles estão errando e uso isso para encontrar o meu próprio atalho.\" (Octani - Astuta/Estratégica)", points: { OCTANI: 1 } },
-      { text: "\"Eu trato tudo como um quebra-cabeça; se eu organizar as peças e a lógica antes, o resultado vem sem esforço físico.\" (Agolgo - Inteligente/Tranquila)", points: { AGOLGO: 1 } },
-      { text: "\"Eu não me importo tanto com a velocidade ou com o plano, desde que eu esteja cercado de pessoas em quem confio.\" (Filini - União/Foco no grupo)", points: { FILINI: 1 } },
+      { text: "\"Eu vou com tudo logo de cara; se eu ver uma oportunidade, eu agarro e não solto até conseguir.\"", points: { PERIPOU: 1 } },
+      { text: "\"Eu foco em manter o ritmo alto, mas sempre olho para o lado para garantir que ninguém do meu círculo ficou para trás.\"", points: { KALIDA: 1 } },
+      { text: "\"Eu prefiro não gastar energia à toa; fico no meu canto analisando o terreno até ter 100% de certeza de onde pisar.\"", points: { KONIPAK: 1 } },
+      { text: "\"Eu deixo os outros se cansarem primeiro; observo onde eles estão errando e uso isso para encontrar o meu próprio atalho.\"", points: { OCTANI: 1 } },
+      { text: "\"Eu trato tudo como um quebra-cabeça; se eu organizar as peças e a lógica antes, o resultado vem sem esforço físico.\"", points: { AGOLGO: 1 } },
+      { text: "\"Eu não me importo tanto com a velocidade ou com o plano, desde que eu esteja cercado de pessoas em quem confio.\"", points: { FILINI: 1 } },
     ]
   },
   {
@@ -151,12 +151,12 @@ export const QUESTIONS: Question[] = [
     id: 9,
     text: "Qual figura ou grupo bíblico mais parece com o seu perfil de atuação?",
     options: [
-      { text: "Davi ou Miriã (Música, poesia e adoração).", points: { PERIPOU: 1 } },
-      { text: "Barnabé ou Rute (Consolação, amizade e lealdade).", points: { KALIDA: 1 } },
-      { text: "Paulo ou Apolo (Mestres, defensores da fé e teólogos).", points: { FILINI: 1 } },
-      { text: "Neemias ou Marta (Construtores, organizadores e servos práticos).", points: { OCTANI: 1 } },
-      { text: "Filipe ou Pedro (Evangelistas intrépidos e missionários).", points: { AGOLGO: 1 } },
-      { text: "Ana ou João Batista (Intercessores constantes e vozes proféticas).", points: { KONIPAK: 1 } },
+      { text: "Davi ou Miriã.", points: { PERIPOU: 1 } },
+      { text: "Barnabé ou Rute.", points: { KALIDA: 1 } },
+      { text: "Paulo ou Apolo.", points: { FILINI: 1 } },
+      { text: "Neemias ou Marta.", points: { OCTANI: 1 } },
+      { text: "Filipe ou Pedro.", points: { AGOLGO: 1 } },
+      { text: "Ana ou João Batista.", points: { KONIPAK: 1 } },
     ]
   },
   {
