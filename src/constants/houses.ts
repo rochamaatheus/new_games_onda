@@ -90,14 +90,13 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 4,
-    text: "Se a igreja recebesse uma grande doação financeira inesperada, no que você votaria para investir primeiro?",
+    text: "Seu time está perdido em meio a um desafio do NewGames, você:",
     options: [
-      { text: "Em novos equipamentos de som, iluminação e instrumentos musicais de ponta.", points: { PERIPOU: 1 } },
-      { text: "Na reforma do espaço de convivência (cantina/café) para promover mais comunhão.", points: { KALIDA: 1 } },
-      { text: "Em uma grande biblioteca teológica, compra de Bíblias e material de estudo para os líderes.", points: { FILINI: 1 } },
-      { text: "Na infraestrutura física do prédio: segurança, climatização e organização das salas.", points: { OCTANI: 1 } },
-      { text: "No envio de missionários e no financiamento de projetos sociais pela cidade.", points: { AGOLGO: 1 } },
-      { text: "Na criação de um espaço silencioso para retiros espirituais e salas de aconselhamento.", points: { KONIPAK: 1 } },
+      { text: "Tento tomar a liderança para resolver a situação, depois vejo se deu certo. (PERIPOU)", points: { PERIPOU: 1 } },
+      { text: "Chamo a galera e organizo o time pra tentar resolver juntos da melhor forma. (KALIDA)", points: { KALIDA: 1 } },
+      { text: "Observo tudo primeiro e só falo quando tenho certeza do que fazer. (KONIPAK)", points: { KONIPAK: 1 } },
+      { text: "Espero um pouco, observo o que os outros fazem e tento aproveitar uma oportunidade pra mudar o rumo. (OCTANI)", points: { OCTANI: 1 } },
+      { text: "Se preocupa em todo mundo estar bem um com o outro, porque o mais importante é ninguém se desanimar. (FILINI)", points: { FILINI: 1 } },
     ]
   },
   {
@@ -126,14 +125,14 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 7,
-    text: "O que te deixa mais frustrado na dinâmica da comunidade?",
+    text: "Como você descreveria o seu ritmo natural ao buscar um objetivo?",
     options: [
-      { text: "Cultos muito mecânicos, sem espaço para a criatividade fluir.", points: { PERIPOU: 1 } },
-      { text: "Ver pessoas novas entrando e saindo sem que ninguém converse com elas.", points: { KALIDA: 1 } },
-      { text: "Pregações ou estudos rasos, com falta de profundidade e base bíblica.", points: { FILINI: 1 } },
-      { text: "Desorganização, atrasos recorrentes e falta de excelência nos processos práticos.", points: { OCTANI: 1 } },
-      { text: "Uma igreja fechada em si mesma, que não sai às ruas para impactar a cidade.", points: { AGOLGO: 1 } },
-      { text: "Falta de fervor na oração, reuniões espiritualmente frias e sem busca real.", points: { KONIPAK: 1 } },
+      { text: "\"Eu vou com tudo logo de cara; se eu ver uma oportunidade, eu agarro e não solto até conseguir.\" (Peripou - Impulsividade/Independência)", points: { PERIPOU: 1 } },
+      { text: "\"Eu foco em manter o ritmo alto, mas sempre olho para o lado para garantir que ninguém do meu círculo ficou para trás.\" (Kalida - Competitiva/Unida)", points: { KALIDA: 1 } },
+      { text: "\"Eu prefiro não gastar energia à toa; fico no meu canto analisando o terreno até ter 100% de certeza de onde pisar.\" (Konipak - Observadora/Cautelosa)", points: { KONIPAK: 1 } },
+      { text: "\"Eu deixo os outros se cansarem primeiro; observo onde eles estão errando e uso isso para encontrar o meu próprio atalho.\" (Octani - Astuta/Estratégica)", points: { OCTANI: 1 } },
+      { text: "\"Eu trato tudo como um quebra-cabeça; se eu organizar as peças e a lógica antes, o resultado vem sem esforço físico.\" (Agolgo - Inteligente/Tranquila)", points: { AGOLGO: 1 } },
+      { text: "\"Eu não me importo tanto com a velocidade ou com o plano, desde que eu esteja cercado de pessoas em quem confio.\" (Filini - União/Foco no grupo)", points: { FILINI: 1 } },
     ]
   },
   {

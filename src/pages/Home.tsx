@@ -218,8 +218,8 @@ export default function Home() {
                 <div className="content-step">
                   <h1 className="magic-title">Inscrição Concluída!</h1>
                   <p className="success-message">Seu perfil foi registrado.</p>
-                  <p style={{ marginTop: '2rem', fontSize: '1rem', opacity: 0.9 }}>
-                    A revelação das equipes será <br /> na gincana presencial!
+                  <p style={{ marginTop: '2rem', fontSize: '1.2rem', fontWeight: 600, color: 'var(--magic-gold)', textShadow: '0 0 10px rgba(197, 160, 89, 0.4)' }}>
+                    A revelação das equipes será <br /> presencialmente no NEWGAMES 2026
                   </p>
                 </div>
               )}
