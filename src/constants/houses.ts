@@ -139,11 +139,11 @@ export const QUESTIONS: Question[] = [
     id: 8,
     text: "Você tem um sábado livre com o seu GD. O que prefere organizar para a galera?",
     options: [
-      { text: "Uma noite de talentos, ensaio de banda, sarau ou ir a um show cristão.", points: { PERIPOU: 1 } },
+      { text: "Sair para jogar um boliche, futebol, volei ou até mesmo role caseirol", points: { PERIPOU: 1 } },
       { text: "Uma noite da pizza na sua casa, com muitas risadas e jogos de tabuleiro.", points: { KALIDA: 1 } },
-      { text: "Um grupo de estudos intenso sobre um livro cristão ou tema apologético polêmico.", points: { FILINI: 1 } },
-      { text: "Um mutirão para ajudar a arrumar, pintar ou limpar o espaço de encontros da igreja.", points: { OCTANI: 1 } },
-      { text: "Um evangelismo criativo, distribuição de marmitas ou ação social na rua.", points: { AGOLGO: 1 } },
+      { text: "fazer um dia do clube do livro onde lemos um livro cristão ou discutir sobre um tema apologético polêmico", points: { FILINI: 1 } },
+      { text: "Verificar se a igreja precisa de ajuda em algum ministério para servir", points: { OCTANI: 1 } },
+      { text: "Um evangelismo criativo ou ação social na rua.", points: { AGOLGO: 1 } },
       { text: "Uma vigília de oração, testemunhos e louvor acústico bem intimista.", points: { KONIPAK: 1 } },
     ]
   },
