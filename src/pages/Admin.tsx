@@ -92,6 +92,33 @@ export default function Admin() {
     }
   };
 
+  const handleExportCSV = () => {
+    if (responses.length === 0) {
+      alert("Não há dados para exportar!");
+      return;
+    }
+
+    const headers = ["Nome", "Equipe", "Data de Inscricao"];
+    const csvContent = [
+      headers.join(","),
+      ...responses.map(res => [
+        `"${res.name.replace(/"/g, '""')}"`,
+        res.house_id,
+        res.created_at ? new Date(res.created_at).toLocaleDateString('pt-BR') : '-'
+      ].join(","))
+    ].join("\n");
+
+    const blob = new Blob(["\ufeff" + csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute("download", `inscritos_gincana_${new Date().toISOString().split('T')[0]}.csv`);
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const handleGlobalSorting = async () => {
     if (!confirm("O BANQUETE DE SELEÇÃO: Isso irá redistribuir TODOS os participantes para equilibrar as equipes perfeitamente. Deseja continuar?")) return;
     
@@ -174,6 +201,9 @@ export default function Admin() {
             <p className="admin-subtitle">Controle Central de Equipes</p>
           </div>
           <div className="header-actions" style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
+            <button className="export-button" onClick={handleExportCSV} title="Exportar para Excel/CSV">
+              📥 Exportar CSV
+            </button>
             <button className="magic-action-button" onClick={handleGlobalSorting} disabled={loading}>
               {loading ? "Processando..." : "Cerimônia de Seleção ⚡"}
             </button>

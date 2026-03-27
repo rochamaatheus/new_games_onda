@@ -89,6 +89,28 @@
   transform: none;
 }
 
+.export-button {
+  background: rgba(197, 160, 89, 0.1);
+  border: 1px solid var(--magic-gold);
+  color: var(--magic-gold);
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.export-button:hover {
+  background: var(--magic-gold);
+  color: #1a0f05;
+  box-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
+}
+
 .logout-button {
   background: transparent;
   border: 1px solid rgba(197, 160, 89, 0.5);
